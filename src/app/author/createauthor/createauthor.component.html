@@ -1,0 +1,12 @@
+<br />
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>Title:
+    <input type="text" formControlName="title" required>
+  </label>
+
+  <label>Author:
+    <input type="text" formControlName="author">
+  </label>
+
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
