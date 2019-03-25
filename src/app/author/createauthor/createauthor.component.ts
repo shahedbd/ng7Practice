@@ -13,23 +13,29 @@ export class CreateauthorComponent implements OnInit {
   private regForm: any;
   constructor(private fb: FormBuilder,
     private router: Router,
-    private ps: PostService) { }
+    private postService: PostService) { }
 
-  profileForm = this.fb.group({
+  postForm = this.fb.group({
     title: ['', Validators.required],
     author: ['']
   });
 
   async onSubmit() {
-    // TODO: Use EventEmitter with form value
-    // console.warn(this.profileForm.value.title);
-
-    this.ps.addPosts(this.profileForm.value.title, this.profileForm.value.author);
-    await delay(300);
-    this.router.navigate(['Author']);
-    // console.warn(this.profileForm.value);
-  }
-  ngOnInit() {
   }
 
+  save() {
+    if (!this.postForm.valid) { return; }
+
+    const formData: any = Object.assign({}, this.postForm.value);
+    this.postService
+      .addPost(formData)
+      .subscribe(res => {
+        this.router.navigate(['Author']);
+      }, err => {
+        scroll(0, 0);
+      });
+  }
+
+
+  ngOnInit() { }
 }

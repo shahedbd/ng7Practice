@@ -3,7 +3,22 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: 'http://localhost:3000',
+  envName: 'local',
+  cookie: {
+    name: 'mycookie',
+    domain: 'localhost',
+  },
+  baseUrl: 'http://localhost:4200',
+  clientCredentials: {
+    username: 'fe',
+    password: 'mypass'
+  },
+  lang: 'en',
+  google: {
+    trackingId: 'xyz'
+  }
 };
 
 /*

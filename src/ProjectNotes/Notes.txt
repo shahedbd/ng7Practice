@@ -1,0 +1,16 @@
+Awesome Angular:
+https://github.com/PatrickJS/awesome-angular
+
+Sweetalert: 
+npm install --save sweetalert
+https://github.com/t4t5/sweetalert
+
+https://sweetalert.js.org/guides/
+npm install sweetalert --save
+
+npm install --save angular-sweetalert-service
+
+
+https://medium.com/@viktorborisov359/create-a-reusable-confirmation-dialog-in-angular-7-using-angular-material-6afb7c733449
+npm install --save @angular/material @angular/cdk @angular/animations
+ng g c components/shared/confirmation-dialog

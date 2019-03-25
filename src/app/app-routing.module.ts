@@ -4,12 +4,14 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
 import { HomeComponent } from './home/home.component';
 import { AuthorComponent } from './author/author.component';
 import { CreateauthorComponent } from './author/createauthor/createauthor.component';
+import { EditauthorComponent } from './author/editauthor/editauthor.component';
 
 const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'ProfileEditor', component: ProfileEditorComponent },
   { path: 'Author', component: AuthorComponent },
-  { path: 'Author/CreateAuthor', component: CreateauthorComponent }
+  { path: 'Author/CreateAuthor', component: CreateauthorComponent },
+  { path: 'Author/EditAuthor/:id', component: EditauthorComponent}
 ];
 
 @NgModule({
