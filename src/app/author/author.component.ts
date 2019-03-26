@@ -37,9 +37,9 @@ export class AuthorComponent implements OnInit {
   }
 
   async deletePosts(id) {
-    // alert('Hello World');
-    // swal('Hello world!');
-    swal({
+    let itemDelete = false;
+
+    await swal({
       title: 'Are you sure to delete it?',
       // text: 'You will not be able to recover this imaginary file!',
       icon: 'warning',
@@ -48,35 +48,31 @@ export class AuthorComponent implements OnInit {
         'Yes'
       ],
       dangerMode: true,
-    }).then(function (isConfirm) {
+    }).then(async function (isConfirm) {
       if (isConfirm) {
+        itemDelete = true;
         swal({
-          title: 'Delted',
+          title: 'Deleted',
           // text: 'Candidates are successfully shortlisted!',
           icon: 'success'
-        }).then(async (result) => {
+        }).then((result) => {
           if (result.value) {
-            this.postService.deletePosts(id);
-            await delay(1);
-            this.ngOnInit();
           } else {
-            console.log('HHH');
           }
         });
       } else {
         swal('Cancelled', '', 'error');
-        // return false;
       }
     });
-  }
 
+    if (itemDelete) {
+      this.route.params.subscribe(async params => {
+        this.postService.deletePosts(id);
+        await delay(1);
+        this.ngOnInit();
+      });
+    }
 
-  delTMP(id) {
-    this.route.params.subscribe(async params => {
-      this.postService.deletePosts(id);
-      await delay(1);
-      this.ngOnInit();
-    });
   }
 
   openDialog(): void {
