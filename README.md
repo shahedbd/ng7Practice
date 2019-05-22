@@ -26,6 +26,16 @@ $ ng --version (angular CLI)
 $ tsc -v
 $ tsc --help
 ```
+
+### MOC API: JSON Server
+```
+Install: $ npm install -g json-server
+Start: $ json-server --watch db.json
+Localhost: http://localhost:3000/posts
+```
+* Clone: https://github.com/shahedbd/jsonServer
+
+
 ### Format Code
 * ⇧⌥F
 
