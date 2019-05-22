@@ -19,7 +19,7 @@ $ npm cache clean
 $ npm install -g @angular/cli
 ```
 ### Check Version
-```
+```bash
 $ node -v
 $ npm -v
 $ ng --version (angular CLI)
@@ -77,11 +77,23 @@ $ ng g c my-new-component
 ```
 
 ## Run project from github:
-```
+```bash
 $ git clone https://github.com/johnpapa/angular-tour-of-heroes.git toh
 $ cd toh
-$ npm i
+$ npm i or npm start
 $ npm audit fix
 ```
 
+### Search, filter, order and pagination.
+```bash
+npm install bootstrap --save
+npm i ng2-search-filter --save
+npm install ng2-order-pipe --save
+npm install ngx-pagination --save
+```
+* Ref: https://ciphertrick.com/search-sort-pagination-angular/
+
+
+### Project CRUD UI
+![CRUD UI](https://github.com/shahedbd/ng7Practice/tree/master/src/ProjectNotes/MainUI.png "CRUD UI")
 

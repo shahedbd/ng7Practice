@@ -14,3 +14,11 @@ npm install --save angular-sweetalert-service
 https://medium.com/@viktorborisov359/create-a-reusable-confirmation-dialog-in-angular-7-using-angular-material-6afb7c733449
 npm install --save @angular/material @angular/cdk @angular/animations
 ng g c components/shared/confirmation-dialog
+
+
+NPM: Search, filter, order and pagination.
+npm install bootstrap --save
+npm i ng2-search-filter --save
+npm install ng2-order-pipe --save
+npm install ngx-pagination --save
+

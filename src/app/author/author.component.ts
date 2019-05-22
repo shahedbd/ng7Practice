@@ -10,6 +10,7 @@ import { ConfirmationDialogComponent } from '../components/shared/confirmation-d
 import { MatDialog } from '@angular/material';
 
 
+
 @Component({
   selector: 'app-author',
   templateUrl: './author.component.html',
@@ -18,6 +19,15 @@ import { MatDialog } from '@angular/material';
 
 
 export class AuthorComponent implements OnInit {
+  searchText: any;
+
+  //sorting
+  key: string = 'id'; //set default
+  reverse: boolean = false;
+  sort(key) {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
   data: any;
   posts: Post[];
