@@ -105,5 +105,6 @@ npm install ngx-pagination --save
 
 
 ### Project CRUD UI
-![CRUD UI](https://github.com/shahedbd/ng7Practice/tree/master/src/ProjectNotes/MainUI.png "CRUD UI")
+![CRUD UI](https://github.com/shahedbd/ng7Practice/blob/master/src/ProjectNotes/MainUI.png "CRUD UI")
+
 
