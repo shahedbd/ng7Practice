@@ -25,7 +25,7 @@
             <td colspan="1"></td>
         </tr>
         <tr
-            *ngFor="let data of personalInfo | orderBy: key : reverse | filter:searchText | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+            *ngFor="let data of personalInfo | orderBy: key : reverse | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
             <td>{{ data.id }}</td>
             <td>{{ data.Name }}</td>
             <td>{{ data.DateofBirth }}</td>
