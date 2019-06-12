@@ -20,8 +20,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
+import { Ng2OrderModule } from 'ng2-order-pipe'; // importing the module
 import {NgxPaginationModule} from 'ngx-pagination';
+import { PersonalInfoModuleModule } from './personal-info-module/personal-info-module.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ConfirmationDialogComponent
   ],
   imports: [
+    PersonalInfoModuleModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

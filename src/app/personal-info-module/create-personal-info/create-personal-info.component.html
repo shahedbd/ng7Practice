@@ -1,0 +1,34 @@
+<br />
+<div class="card">
+  <br />
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="col-md-1">Name</label>
+      <input class="col-md-6" type="text" formControlName="Name" required>
+      <label class="col-md-5"></label>
+    </div>
+    <div class="form-group">
+      <label class="col-md-1">Date of Birth</label>
+      <input class="col-md-6" type="datetime" formControlName="DateofBirth">
+      <label class="col-md-5"></label>
+    </div>
+    <div class="form-group">
+      <label class="col-md-1">Mobile No</label>
+      <input class="col-md-6" type="number" formControlName="MobileNo">
+      <label class="col-md-5"></label>
+    </div>
+    <div class="form-group">
+      <label class="col-md-1">Country</label>
+      <input class="col-md-6" type="text" formControlName="Country">
+      <label class="col-md-5"></label>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-md-1"></label>
+      <button type="submit" (click)="save()" [disabled]="!postForm.valid" class="btn btn-success">Submit</button>
+      -<a [routerLink]="['../../PersonalInfo']" class="btn btn-danger">Cancel</a>
+      <label class="col-md-6"></label>
+    </div>
+  </form>
+</div>
