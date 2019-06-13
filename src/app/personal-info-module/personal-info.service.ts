@@ -9,7 +9,7 @@ import { environment as env } from './../../environments/environment';
 })
 export class PersonalInfoService {
 
-  url = `${env.api}/PersonalInfo/`;
+  url = `${env.api}PersonalInfo/`;
   constructor(private http: HttpClient) { }
 
   getPersonalInfo() {
@@ -25,7 +25,7 @@ export class PersonalInfoService {
   }
 
   updatePersonalInfo(body, id) {
-    this.http.put(`${this.url}/${id}`, body)
+    this.http.put(`${this.url}${id}`, body)
       .subscribe(res => console.log('Updated. ID: ' + id));
   }
 

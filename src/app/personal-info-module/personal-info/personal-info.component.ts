@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonalInfo } from '../personal-info';
-import { PersonalInfoService } from '../personal-info.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GenericService } from '../../DataService/generic.service';
 import { delay } from 'q';
 
 @Component({
@@ -22,13 +22,14 @@ export class PersonalInfoComponent implements OnInit {
     this.reverse = !this.reverse;
   }
 
-  constructor(private personalInfoService: PersonalInfoService,
+  constructor(private genericService: GenericService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+    this.genericService.apiName = 'PersonalInfo';
+  }
 
   ngOnInit() {
-    this.personalInfoService
-      .getPersonalInfo()
+    this.genericService.getAll()
       .subscribe((data: PersonalInfo[]) => {
         this.personalInfo = data;
       });
@@ -65,14 +66,11 @@ export class PersonalInfoComponent implements OnInit {
 
     if (itemDelete) {
       this.route.params.subscribe(async params => {
-        this.personalInfoService.deletePersonalInfo(id);
-
-        console.log(id);
-        await delay(1);
+        this.genericService.deleteById(id);
+        await delay(1000);
         this.ngOnInit();
       });
     }
-
   }
 
 }

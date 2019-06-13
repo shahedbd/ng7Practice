@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PersonalInfoService } from '../personal-info.service';
+import { GenericService } from '../../DataService/generic.service';
 
 @Component({
   selector: 'app-create-personal-info',
@@ -9,11 +9,11 @@ import { PersonalInfoService } from '../personal-info.service';
   styleUrls: ['./create-personal-info.component.scss']
 })
 export class CreatePersonalInfoComponent implements OnInit {
-
   private regForm: any;
+
   constructor(private fb: FormBuilder,
     private router: Router,
-    private personalInfoService: PersonalInfoService) { }
+    private genericService: GenericService) { }
 
   postForm = this.fb.group({
     Name: ['', Validators.required],
@@ -30,8 +30,7 @@ export class CreatePersonalInfoComponent implements OnInit {
 
     const formData: any = Object.assign({}, this.postForm.value);
 
-    this.personalInfoService
-      .createPersonalInfo(formData)
+    this.genericService.createNew(formData)
       .subscribe(res => {
         this.router.navigate(['PersonalInfo']);
       }, err => {

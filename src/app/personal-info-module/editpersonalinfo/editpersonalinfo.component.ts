@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PersonalInfoService } from '../personal-info.service';
 import { delay } from 'q';
+import { GenericService } from '../../DataService/generic.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class EditpersonalinfoComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private personalInfoService: PersonalInfoService,
+    private genericService: GenericService,
     private fb: FormBuilder) {
     this.createForm();
   }
@@ -33,7 +33,7 @@ export class EditpersonalinfoComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.personalInfoService.getPersonalInfoById(params['id']).subscribe(result => {
+      this.genericService.getById(params['id']).subscribe(result => {
         this.data = result;
       });
     });
@@ -47,7 +47,7 @@ export class EditpersonalinfoComponent implements OnInit {
 
     const formData: any = Object.assign({}, this.angForm.value);
     this.route.params.subscribe(async params => {
-      this.personalInfoService.updatePersonalInfo(formData, params['id']);
+      this.genericService.update(params['id'], formData);
       await delay(1);
       this.ngOnInit();
       this.router.navigate(['PersonalInfo']);
