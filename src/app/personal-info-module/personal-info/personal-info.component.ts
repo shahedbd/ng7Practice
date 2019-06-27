@@ -3,6 +3,8 @@ import { PersonalInfo } from '../personal-info';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GenericService } from '../../DataService/generic.service';
 import { delay } from 'q';
+import { JSONDataService } from '../../DataService/jsondata.service';
+import { Country } from '../../DataService/country';
 
 @Component({
   selector: 'app-personal-info',
@@ -13,6 +15,7 @@ export class PersonalInfoComponent implements OnInit {
 
   data: any;
   personalInfo: PersonalInfo[];
+  country: Country[];
 
   // sorting
   key = 'id'; // set default
@@ -23,6 +26,7 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   constructor(private genericService: GenericService,
+    private jSONDataService: JSONDataService,
     private router: Router,
     private route: ActivatedRoute) {
     this.genericService.apiName = 'PersonalInfo';
@@ -33,6 +37,14 @@ export class PersonalInfoComponent implements OnInit {
       .subscribe((data: PersonalInfo[]) => {
         this.personalInfo = data;
       });
+
+    this.jSONDataService.getJSON()
+      .subscribe((data: Country[]) => {
+        this.country = data;
+      });
+  }
+
+  onChangeCountry(countryValue) {
   }
 
   async deletePersonalInfo(id) {

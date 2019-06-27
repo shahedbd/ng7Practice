@@ -154,5 +154,21 @@ export class GenericService {
 ```
 
 
+### NgxMatSelectSearch 
+* https://stackblitz.com/github/bithost-gmbh/ngx-mat-select-search-example?file=src%2Fapp%2Fapp.component.html
+* https://www.npmjs.com/package/ngx-mat-select-search
+
+
+### Export to
+* https://www.npmjs.com/package/ngx-export-as
+* ng build ngx-export-as
+
+* https://www.npmjs.com/package/jspdf
+* npm install jspdf --save
+* https://github.com/simonbengtsson/jsPDF-AutoTable
+* https://github.com/MrRio/jsPDF
+
+
+
 
 

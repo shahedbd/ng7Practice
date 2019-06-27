@@ -13,6 +13,7 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EditpersonalinfoComponent } from './editpersonalinfo/editpersonalinfo.component';
 
+
 @NgModule({
   declarations: [
     PersonalInfoComponent,

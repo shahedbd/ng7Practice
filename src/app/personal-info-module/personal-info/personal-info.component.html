@@ -9,8 +9,20 @@
             placeholder="&#61442;  Start searching">
     </div>
 </div>
-
 <hr />
+
+
+<div class="form-group row">
+    <label for="SelectCountry" class="col-sm-2 col-form-label">Select Country</label>
+    <div class="col-sm-6">
+        <select class="form-control">
+            <option *ngFor="let country of country; let i = index" value="{{i}}">{{country.name}}</option>
+        </select>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+<hr />
+
 <table class="table table-hover" border="1">
     <thead>
         <tr>
@@ -41,4 +53,4 @@
 </table>
 
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
+<br />

@@ -8,6 +8,8 @@ import { EditauthorComponent } from './author/editauthor/editauthor.component';
 import { PersonalInfoComponent } from './personal-info-module/personal-info/personal-info.component';
 import { CreatePersonalInfoComponent } from './personal-info-module/create-personal-info/create-personal-info.component';
 import { EditpersonalinfoComponent } from './personal-info-module/editpersonalinfo/editpersonalinfo.component';
+import { ExportdataComponent } from './jsPDF/exportdata/exportdata.component';
+import { JspdftestComponent } from './jsPDF/jspdftest/jspdftest.component';
 
 const routes: Routes = [
   { path: 'Home', component: HomeComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'Author/EditAuthor/:id', component: EditauthorComponent},
   { path: 'PersonalInfo', component: PersonalInfoComponent},
   { path: 'PersonalInfo/CreatePersonalInfo', component: CreatePersonalInfoComponent },
-  { path: 'PersonalInfo/EditPersonalInfo/:id', component: EditpersonalinfoComponent}
+  { path: 'PersonalInfo/EditPersonalInfo/:id', component: EditpersonalinfoComponent},
+  { path: 'Exportdata', component: ExportdataComponent},
+  { path: 'Jspdftest', component: JspdftestComponent},
 ];
 
 @NgModule({

@@ -25,6 +25,15 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { PersonalInfoModuleModule } from './personal-info-module/personal-info-module.module';
 
 
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MatFormFieldModule, MatSelectModule } from '@angular/material';
+import { SingleSelectionExampleComponent } from './dropdown/single-selection-example/single-selection-example.component';
+import { ExportdataComponent } from './jsPDF/exportdata/exportdata.component';
+
+import { ExportAsModule } from 'ngx-export-as';
+import { JspdftestComponent } from './jsPDF/jspdftest/jspdftest.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +45,10 @@ import { PersonalInfoModuleModule } from './personal-info-module/personal-info-m
     UpdateauthorComponent,
     DeleteauthorComponent,
     EditauthorComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    SingleSelectionExampleComponent,
+    ExportdataComponent,
+    JspdftestComponent
   ],
   imports: [
     PersonalInfoModuleModule,
@@ -50,7 +62,11 @@ import { PersonalInfoModuleModule } from './personal-info-module/personal-info-m
     MatButtonModule,
     Ng2SearchPipeModule,
     Ng2OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    NgxMatSelectSearchModule,
+    ExportAsModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
