@@ -32,6 +32,7 @@ import { ExportdataComponent } from './jsPDF/exportdata/exportdata.component';
 
 import { ExportAsModule } from 'ngx-export-as';
 import { JspdftestComponent } from './jsPDF/jspdftest/jspdftest.component';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { JspdftestComponent } from './jsPDF/jspdftest/jspdftest.component';
     MatSelectModule,
     MatFormFieldModule,
     NgxMatSelectSearchModule,
-    ExportAsModule
+    ExportAsModule,
+    UserModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]

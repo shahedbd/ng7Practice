@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   api: 'http://localhost:3000/',
+  apiUrl: 'http://localhost:4000',
   envName: 'local',
   cookie: {
     name: 'mycookie',

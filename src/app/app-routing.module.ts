@@ -10,18 +10,22 @@ import { CreatePersonalInfoComponent } from './personal-info-module/create-perso
 import { EditpersonalinfoComponent } from './personal-info-module/editpersonalinfo/editpersonalinfo.component';
 import { ExportdataComponent } from './jsPDF/exportdata/exportdata.component';
 import { JspdftestComponent } from './jsPDF/jspdftest/jspdftest.component';
+import { LoginComponent } from './user/login';
+import { RegisterComponent } from './user/register';
 
 const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'ProfileEditor', component: ProfileEditorComponent },
   { path: 'Author', component: AuthorComponent },
   { path: 'Author/CreateAuthor', component: CreateauthorComponent },
-  { path: 'Author/EditAuthor/:id', component: EditauthorComponent},
-  { path: 'PersonalInfo', component: PersonalInfoComponent},
+  { path: 'Author/EditAuthor/:id', component: EditauthorComponent },
+  { path: 'PersonalInfo', component: PersonalInfoComponent },
   { path: 'PersonalInfo/CreatePersonalInfo', component: CreatePersonalInfoComponent },
-  { path: 'PersonalInfo/EditPersonalInfo/:id', component: EditpersonalinfoComponent},
-  { path: 'Exportdata', component: ExportdataComponent},
-  { path: 'Jspdftest', component: JspdftestComponent},
+  { path: 'PersonalInfo/EditPersonalInfo/:id', component: EditpersonalinfoComponent },
+  { path: 'Exportdata', component: ExportdataComponent },
+  { path: 'Jspdftest', component: JspdftestComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({

@@ -22,3 +22,7 @@ npm i ng2-search-filter --save
 npm install ng2-order-pipe --save
 npm install ngx-pagination --save
 
+
+User Registration: 
+https://stackblitz.com/edit/angular-2-5-registration-login-example?file=app%2F_directives%2Falert.component.html
+

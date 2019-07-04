@@ -168,6 +168,13 @@ export class GenericService {
 * https://github.com/simonbengtsson/jsPDF-AutoTable
 * https://github.com/MrRio/jsPDF
 
+### PDF Viewer
+* https://github.com/VadimDez/ng2-pdf-viewer
+
+### User Registration: 
+https://stackblitz.com/edit/angular-2-5-registration-login-example?file=app%2F_directives%2Falert.component.html
+
+
 
 
 
