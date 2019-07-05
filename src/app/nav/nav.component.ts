@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user/_models';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../user/_services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
@@ -10,6 +11,8 @@ import { AuthenticationService } from '../user/_services';
 })
 export class NavComponent implements OnInit {
   currentUser: User;
+  isLoggedIn$: Observable<boolean>;
+
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService
@@ -23,6 +26,7 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isLoggedIn$ = this.authenticationService.isLoggedIn;
   }
 
 }

@@ -174,6 +174,9 @@ export class GenericService {
 ### User Registration: 
 https://stackblitz.com/edit/angular-2-5-registration-login-example?file=app%2F_directives%2Falert.component.html
 
+### Hide Navbar Menu from Login page
+https://loiane.com/2017/08/angular-hide-navbar-login-page/
+
 
 
 

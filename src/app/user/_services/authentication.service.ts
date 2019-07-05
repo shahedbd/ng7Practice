@@ -6,15 +6,19 @@ import { environment } from '../../../environments/environment';
 import { User } from '../_models';
 
 
-
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
+    private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
+    }
+
+    get isLoggedIn() {
+        return this.loggedIn.asObservable();
     }
 
     public get currentUserValue(): User {
