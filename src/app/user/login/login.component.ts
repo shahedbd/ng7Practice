@@ -3,7 +3,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AuthenticationService, AlertService } from '../_services';
+import { Inject, Injectable } from '@angular/core';
+import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 
+const STORAGE_KEY = 'isLogin';
 
 @Component({
   selector: 'app-login',
@@ -23,12 +26,13 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    @Inject(SESSION_STORAGE) private storage: StorageService
   ) {
     // redirect to home if already logged in
-    if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
-    }
+    //if (this.authenticationService.currentUserValue) {
+      //this.router.navigate(['/']);
+    //}
   }
 
   ngOnInit() {
@@ -41,11 +45,13 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
     this.submitted = true;
+    this.storage.set(STORAGE_KEY, true);
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {

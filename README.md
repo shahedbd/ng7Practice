@@ -177,6 +177,8 @@ https://stackblitz.com/edit/angular-2-5-registration-login-example?file=app%2F_d
 ### Hide Navbar Menu from Login page
 https://loiane.com/2017/08/angular-hide-navbar-login-page/
 
+### Local Storage
+https://medium.com/@tiagovalverde/how-to-save-your-app-state-in-localstorage-with-angular-ce3f49362e31
 
 
 

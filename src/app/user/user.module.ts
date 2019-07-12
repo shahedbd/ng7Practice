@@ -11,6 +11,7 @@ import { HomeComponent } from '../home';
 import { fakeBackendProvider, JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { Login2Component } from './login2/login2.component';
 
+
 @NgModule({
   imports: [
     BrowserModule,
